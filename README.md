@@ -1,6 +1,6 @@
 # RV32I Wishbone SoC with Matrix Multiplication Accelerator
 
-A modular **RV32I RISC-V System-on-Chip (SoC)** implemented in **SystemVerilog**, featuring a **Wishbone B4 Classic** interconnect, a **3×3 hardware matrix multiplication accelerator**, on-chip data memory, and a **UART peripheral**. The design demonstrates hardware acceleration through memory-mapped peripherals while maintaining a clean and scalable SoC architecture. :contentReference[oaicite:0]{index=0}
+A modular **RV32I RISC-V System-on-Chip (SoC)** implemented in **SystemVerilog**, featuring a **Wishbone B4 Classic** interconnect, a **3×3 hardware matrix multiplication accelerator**, on-chip data memory, and a **UART peripheral**. The design demonstrates hardware acceleration through memory-mapped peripherals while maintaining a clean and scalable SoC architecture. 
 
 ---
 
@@ -19,7 +19,7 @@ A modular **RV32I RISC-V System-on-Chip (SoC)** implemented in **SystemVerilog**
 - UART (8-N-1, 9600 baud)
 - On-chip data memory
 - Modular and scalable interconnect
-- RTL simulation and FPGA validation using Vivado ILA :contentReference[oaicite:1]{index=1}
+- RTL simulation and FPGA validation using Vivado ILA 
 
 ---
 
@@ -42,7 +42,7 @@ A modular **RV32I RISC-V System-on-Chip (SoC)** implemented in **SystemVerilog**
 +-------------+   +-------------+  +-----------+
 ```
 
-The CPU is the only Wishbone master. All peripherals are accessed through memory-mapped registers using standard load/store instructions. :contentReference[oaicite:2]{index=2}
+The CPU is the only Wishbone master. All peripherals are accessed through memory-mapped registers using standard load/store instructions. 
 
 ---
 
@@ -101,8 +101,6 @@ rv32i_soc_top
 | `0x0000_2000` | `0x0000_2008` | UART |
 | `0x0000_3000` | `0x0000_FFFF` | Reserved |
 
-:contentReference[oaicite:3]{index=3}
-
 ---
 
 # Matrix Accelerator
@@ -117,7 +115,7 @@ The matrix accelerator is implemented as a memory-mapped Wishbone peripheral and
 - Matrix B Memory
 - Matrix C Memory
 
-The PE array performs all **nine dot products in parallel**, significantly reducing execution time compared to software execution. :contentReference[oaicite:4]{index=4}
+The PE array performs all **nine dot products in parallel**, significantly reducing execution time compared to software execution. 
 
 ---
 
@@ -129,7 +127,7 @@ The PE array performs all **nine dot products in parallel**, significantly reduc
 - 16× oversampling receiver
 - Memory-mapped register interface
 
-The UART enables communication between the SoC and a host PC using polling-based software. :contentReference[oaicite:5]{index=5}
+The UART enables communication between the SoC and a host PC using polling-based software. 
 
 ---
 
@@ -147,9 +145,7 @@ Adding new peripherals only requires:
 - a new Wishbone wrapper
 - one decoder entry
 - one response mux connection
-
-:contentReference[oaicite:6]{index=6}
-
+- 
 ---
 
 # Resource Utilization
@@ -161,7 +157,7 @@ Adding new peripherals only requires:
 | DSP Slices | 9 |
 | Block RAM | 0* |
 
-\*Matrix memories are inferred as distributed (LUT) RAM. :contentReference[oaicite:7]{index=7}
+Matrix memories are inferred as distributed (LUT) RAM.
 
 ---
 
@@ -182,7 +178,5 @@ Adding new peripherals only requires:
 - Timer peripherals
 - Larger matrix accelerator
 - Multi-cycle or pipelined RV32I processor
-
-:contentReference[oaicite:8]{index=8}
 
 ---
